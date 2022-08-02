@@ -4,4 +4,4 @@ Roadmap:
 
 1- Change so that the pacman opens and closes the mouth when moving
 
-<img src="PacMan1.png">
+<img src="./images/PacMan1.png">
