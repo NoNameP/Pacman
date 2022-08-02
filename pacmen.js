@@ -19,18 +19,18 @@ function makePac() {
   let position = setToRandom(200);
   // Add image to div id = game
   let game = document.getElementById("game");
-  let newimg = document.createElement("img");
-  newimg.style.position = "absolute";
-  newimg.src = "PacMan1.png";
-  newimg.width = 100;
-  newimg.style.left = position.x;
-  newimg.style.top = position.y;
-  game.appendChild(newimg);
+  let newImg = document.createElement("img");
+  newImg.style.position = "absolute";
+  newImg.src = "./images/PacMan1.png";
+  newImg.width = 100;
+  newImg.style.left = position.x;
+  newImg.style.top = position.y;
+  game.appendChild(newImg);
   // new style of creating an object
   return {
     position,
     velocity,
-    newimg,
+    newImg,
   };
 }
 
@@ -41,20 +41,20 @@ function update() {
     item.position.x += item.velocity.x;
     item.position.y += item.velocity.y;
 
-    item.newimg.style.left = item.position.x;
-    item.newimg.style.top = item.position.y;
+    item.newImg.style.left = item.position.x;
+    item.newImg.style.top = item.position.y;
   });
   setTimeout(update, 20);
 }
 
 function checkCollisions(item) {
   if (
-    item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
+    item.position.x + item.velocity.x + item.newImg.width > window.innerWidth ||
     item.position.x + item.velocity.x < 0
   )
     item.velocity.x = -item.velocity.x;
   if (
-    item.position.y + item.velocity.y + item.newimg.height >
+    item.position.y + item.velocity.y + item.newImg.height >
       window.innerHeight ||
     item.position.y + item.velocity.y < 0
   )
